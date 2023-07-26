@@ -1,8 +1,7 @@
-import bcrypt from 'bcryptjs';
-import { response } from 'express';
-
 import { User } from '../models/userModel.js';
+import bcrypt from 'bcryptjs';
 import { genJWT } from '../helpers/JWT.js';
+import { response } from 'express';
 import { googleVerify } from '../helpers/google-verify.js';
 
 
@@ -50,7 +49,7 @@ const googleSignIn = async (req, res = response) =>{
         
         let user = await User.findOne({email});
         
-        if(!user){ //if user doesn't exist, create one
+        if(!user){
             const data = {
                 name,
                 email,
@@ -61,7 +60,7 @@ const googleSignIn = async (req, res = response) =>{
             user = new User(data);
             await user.save();
         }
-        if(!user.status){ //deleted users or banned ones 
+        if(!user.status){
             return res.status(401).json({
                 msg: 'user unauthorized'
             });

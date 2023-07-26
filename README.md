@@ -1,45 +1,29 @@
-
-# BASIC RESTserver
-
-A simple template for a cool rest server.
+# BASIC RESTserver with authentication and Google sigin
 
 
-## Authors
-
-- [@SpookyV1cky](https://www.github.com/spookyv1cky)
 
 
-## Deployment
 
-To deploy this project run
-
-```bash
-  npm run deploy
-```
+// porque el semen es mas caro que la sangre - esta hecha a mano
 
 
-## Environment Variables
-
-You will need to add the following environment variables to your .env file
-
-`PORT`
-`MONGODB_CNN`
-`SECRET_KEY`
-`GOOGLE_CLIENT_ID`
-`GOOGLE_SECRET_ID`
-
-## Made in
-
-**Server:** NodeJS, Express, Mongoose
 
 
-## 🔗 Links
-[![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/SpookyV1cky)
-## 🚀 About Me
-Backend developer | cool | Tomoko enjoyer
 
 
-## Contact
 
-mail: v1ckyk4t_a@proton.me
 
+
+
+# important considerations
+you need to generate an '.env' file in the root directory with these environment variables:
+-
+PORT= SERVER PORT
+MONGODB_CNN= YOUR MongoDB connection string
+SECRET_KEY= your secret key for JWT
+
+GOOGLE_CLIENT_ID= your google id client api key (OAuth 2.0) generated  in https://console.cloud.google.com/
+GOOGLE_SECRET_ID= same as client id
+
+
+-Victoria Aurora

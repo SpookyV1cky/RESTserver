@@ -11,9 +11,9 @@ const userPath = Router();
 
 
    
-userPath.get('/', userGet); //get users
+userPath.get('/', userGet);
 
-userPath.post('/',[ //Create a new user or login
+userPath.post('/',[
     check('name', 'name is empty, your name is "empty"? asshole').not().isEmpty(),
     check('email').custom(emailExist).isEmail(),
     check('password', 'weak password, they will fuck you').isLength({min:8}),
@@ -23,14 +23,14 @@ userPath.post('/',[ //Create a new user or login
 
 ] ,userPost);
 
-userPath.put('/:id',[   //update a user
+userPath.put('/:id',[
     check('id', 'INVALID ID').isMongoId(),
     check('id').custom(idExist),
     check('role').custom(isRoleValid),
     validate]
     ,userPut);
 
-userPath.delete('/:id',[ //delete user
+userPath.delete('/:id',[
     validateJWT,
     check('id', 'INVALID ID').isMongoId(),
     check('id').custom(idExist),

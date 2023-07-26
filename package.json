@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "node app.js",
-    "deploy": "npm install && node app.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "RESTserver",
@@ -19,9 +19,13 @@
     "bcryptjs": "^2.4.3",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
+    "express-fileupload": "^1.4.0",
     "express-validator": "^7.0.1",
     "google-auth-library": "^8.9.0",
     "jsonwebtoken": "^9.0.1",
     "mongoose": "^7.3.1"
+  },
+  "devDependencies": {
+    "@types/express-fileupload": "^1.4.1"
   }
 }

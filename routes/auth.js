@@ -7,7 +7,6 @@ import { validate } from "../middlewares/validator.js";
 
 const authPath = Router();
 
-//Simple Login
 authPath.post('/login',[
 
     check('email').isEmail(),
@@ -15,7 +14,7 @@ authPath.post('/login',[
     validate
 ],login);
 
-//For login with google auth
+
 authPath.post('/google',[
 
     check('id_token', 'google token missing').not().isEmpty(),
