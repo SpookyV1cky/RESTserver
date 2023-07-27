@@ -37,7 +37,9 @@ class Server{
         
         this.app.use( express.static('public'));
         this.app.use(express.json());
-        this.app.use(fileUpload());
+        this.app.use(fileUpload({
+            createParentPath: true
+        }));
         
     }
 

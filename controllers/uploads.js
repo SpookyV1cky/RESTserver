@@ -9,13 +9,17 @@ const upload = async(req, res) => {
     }
   
     
-    
-    const uploadname = await uploadFile(req.files.FILES, ['png','jpg','jpeg','gif']);
-
-    res.json({
-      msg: 'OK',
-      name: uploadname
-    });
+    try {
+      
+      const uploadname = await uploadFile(req.files.FILES, ['png','jpg','jpeg','gif'], 'img');
+  
+      res.json({
+        msg: 'OK',
+        name: uploadname
+      });
+    } catch (error) {
+      res.json({error});
+    }
 
 }
 
