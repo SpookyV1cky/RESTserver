@@ -1,8 +1,8 @@
-import { Router } from "express"; 
-import { check } from "express-validator";
+const { Router } = require('express'); 
+const { check } = require('express-validator');
 
-import { validate } from "../middlewares/validator.js";
-import { upload } from "../controllers/uploads.js";
+const { validate } = require('../middlewares/validator');
+const { upload } = require('../controllers/uploads');
 
 
 const uploadsPath = Router();
@@ -10,6 +10,6 @@ const uploadsPath = Router();
 uploadsPath.post('/', upload);
 
 
-export{
+module.exports = {
     uploadsPath
 }

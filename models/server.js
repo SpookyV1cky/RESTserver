@@ -1,10 +1,10 @@
-import express from 'express';
-import 'dotenv/config'
-import { userPath } from '../routes/user.js';
-import { dbConnect } from '../database/config.db.js';
-import { authPath } from '../routes/auth.js';
-import { uploadsPath } from '../routes/uploads.js';
-import fileUpload from "express-fileupload";
+const express = require('express');
+require('dotenv/config');
+const { userPath } = require( '../routes/user');
+const { dbConnect } = require( '../database/config.db');
+const { authPath } = require( '../routes/auth');
+const {uploadsPath} = require( '../routes/uploads');
+const fileUpload = require('express-fileupload');
 
 class Server{
 
@@ -59,6 +59,6 @@ class Server{
         });
     }
 }
-export{
+module.exports = {
     Server
 }

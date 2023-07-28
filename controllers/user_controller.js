@@ -1,5 +1,5 @@
-import {User} from '../models/userModel.js';
-import bcrypt from 'bcryptjs';
+const {User} = require ('../models/userModel');
+const bcrypt = require ('bcryptjs');
 // Controladores de respuesta para ruta /API/USERS
 
 
@@ -75,7 +75,7 @@ const userDelete = async(req, res) => {
 }
 
 
-export{
+module.exports = {
     userGet,
     userPost,
     userPut,

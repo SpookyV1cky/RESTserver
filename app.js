@@ -1,4 +1,4 @@
-import { Server } from "./models/server.js";
+const { Server } = require('./models/server');
 
 const server = new Server();
 

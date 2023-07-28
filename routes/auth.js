@@ -1,7 +1,7 @@
-import { Router } from "express"; 
-import { googleSignIn, login } from "../controllers/auth_controller.js";
-import { check } from "express-validator";
-import { validate } from "../middlewares/validator.js";
+const { Router } = require('express'); 
+const { googleSignIn, login } = require('../controllers/auth_controller');
+const { check } = require('express-validator');
+const { validate } = require('../middlewares/validator');
 
 
 
@@ -23,6 +23,6 @@ authPath.post('/google',[
 ], googleSignIn);
 
 
-export{
+module.exports = {
     authPath
 }

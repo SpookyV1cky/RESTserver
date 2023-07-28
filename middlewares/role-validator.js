@@ -1,4 +1,4 @@
-import { response } from "express";
+const { response } = require('express');
 
 const roleCheck = (...role) => {
 
@@ -16,11 +16,10 @@ const roleCheck = (...role) => {
             })
         }
 
-        console.log (role, req.userAuth.role);
         next();
     }
 }
 
-export{
+module.exports = {
     roleCheck
 }

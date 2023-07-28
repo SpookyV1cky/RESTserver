@@ -1,6 +1,6 @@
-import { response } from 'express';
-import jwt from 'jsonwebtoken';
-import { User } from '../models/userModel.js';
+const { response } = require ('express');
+const jwt = require ('jsonwebtoken');
+const { User } = require ('../models/userModel');
 
 
 const validateJWT = async(req, res = response, next) =>{
@@ -16,8 +16,6 @@ const validateJWT = async(req, res = response, next) =>{
         const {uid} = jwt.verify(token, process.env.SECRET_KEY);
 
         const userAuth = await User.findById(uid);
-        console.log(userAuth.id);
-        
 
         req.userAuth = userAuth;
 
@@ -32,6 +30,6 @@ const validateJWT = async(req, res = response, next) =>{
 }
 
 
-export{
+module.exports={
     validateJWT
 }

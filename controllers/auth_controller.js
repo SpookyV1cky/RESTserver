@@ -1,8 +1,8 @@
-import { User } from '../models/userModel.js';
-import bcrypt from 'bcryptjs';
-import { genJWT } from '../helpers/JWT.js';
-import { response } from 'express';
-import { googleVerify } from '../helpers/google-verify.js';
+const { User } = require ('../models/userModel');
+const bcrypt = require ('bcryptjs');
+const {genJWT } = require ('../helpers/JWT');
+const {response } = require ('express');
+const {googleVerify } = require ('../helpers/google-verify');
 
 
 const login = async (req, res) =>{
@@ -79,7 +79,7 @@ const googleSignIn = async (req, res = response) =>{
 
 }
 
-export{
+module.exports = {
     login,
     googleSignIn
 }

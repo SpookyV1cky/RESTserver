@@ -1,10 +1,10 @@
-import { Router } from "express"; 
-import { userDelete, userGet, userPost, userPut } from "../controllers/user_controller.js";
-import { check } from "express-validator";
-import { validate } from "../middlewares/validator.js";
-import { emailExist, idExist, isRoleValid } from "../helpers/db-validators.js";
-import { validateJWT } from "../middlewares/jwt-validator.js";
-import { roleCheck } from "../middlewares/role-validator.js";
+const { Router } = require ('express'); 
+const { userDelete, userGet, userPost, userPut } = require ('../controllers/user_controller.js');
+const { check } = require ('express-validator');
+const { validate } = require ('../middlewares/validator');
+const { emailExist, idExist, isRoleValid } = require ('../helpers/db-validators');
+const { validateJWT } = require ('../middlewares/jwt-validator');
+const { roleCheck } = require ('../middlewares/role-validator');
 
 
 const userPath = Router();
@@ -38,6 +38,6 @@ userPath.delete('/:id',[
     validate
 ] ,userDelete);
 
-export{
+module.exports = {
     userPath
 }
